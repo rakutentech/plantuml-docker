@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  plantuml:
+    build:
+      context: .
+    image: rakutentech/plantuml:local
+    init: true
+    container_name: rakutentech-plantuml
+    ports:
+      - 8080:8080
