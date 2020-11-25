@@ -37,7 +37,7 @@ RUN set -o pipefail && curl -fsSL "https://repo1.maven.org/maven2/org/eclipse/je
 
 # Install PlantUML
 WORKDIR /home/jetty/webapps
-RUN curl -f#SLo plantuml.war "https://github.com/plantuml/plantuml-server/releases/download/v${PLANTUML_VERSION}/plantuml-v${PLANTUML_VERSION}.war"
+RUN curl -f#SLo ROOT.war "https://github.com/plantuml/plantuml-server/releases/download/v${PLANTUML_VERSION}/plantuml-v${PLANTUML_VERSION}.war"
 
 # Install Mulish as a free-to-use alternative to the internal Rakuten Sans font.
 # See https://fonts.google.com/specimen/Mulish
