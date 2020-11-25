@@ -1,0 +1,9 @@
+' Enable skins
+skinparam useBetaStyle true
+
+' The default skin already sets this, but it doesn't work (the beta has a few bugs still)
+skinparam titleFontName "Rakuten Sans"
+skinparam BackgroundColor transparent
+
+' Define a handy macro for adding icons
+!define FA(x) <font:Font Awesome 5 Free><U+x></font>

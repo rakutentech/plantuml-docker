@@ -25,6 +25,7 @@ The differences with [plantuml/plantuml-server](https://hub.docker.com/r/plantum
 - Based on **Alpine Linux**, not Debian.
 - Runs on the **Zulu OpenJDK**.
 - **`PLANTUML_LIMIT_SIZE`** raised to `16384` so you can generate bigger diagrams.
+- Installs a [`plantuml.skin`](./plantuml.skin) with a few overrides.
 - Comes with a few fonts:
   - **[Mulish](https://fonts.google.com/specimen/Mulish)** is installed and poses as the **Rakuten Sans** font, which it is visually similar to (and a decent fallback for when generating PNG diagrams).
   - **[Noto Sans](https://fonts.google.com/specimen/Noto+Sans)** and [Noto Sans JP](https://fonts.google.com/specimen/Noto+Sans+JP), recommended by the [ReX typography guidelines](http://rex.public.rakuten-it.com/design/the-basics/typography/). **Noto Sans** is set as the default `sans-serif` font.
@@ -35,10 +36,8 @@ The differences with [plantuml/plantuml-server](https://hub.docker.com/r/plantum
 
 ```plantuml
 @startuml
-!define FA(x) <font:Font Awesome 5 Free><U+x></font>
-
-skinparam defaultFontName "Noto Sans"
-skinparam titleFontName "Rakuten Sans"
+' Load default includes
+!include https://gitcdn.xyz/repo/rakutentech/plantuml-docker/main/lib.pu
 
 title Rakuten PlantUML Image
 

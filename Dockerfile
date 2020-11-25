@@ -7,6 +7,7 @@ ENV ALLOW_PLANTUML_INCLUDE=true
 ENV JAVA_HOME=/usr/lib/jvm/zulu13-ca
 ENV JETTY_BASE=/home/jetty
 ENV JETTY_HOME=/home/jetty
+ENV HOME=/home/jetty
 ENV LANG=C.UTF-8
 ENV MAVEN_OPTS=-Xmx2G
 ENV PLANTUML_LIMIT_SIZE=16384
@@ -83,6 +84,9 @@ WORKDIR /home/jetty
 RUN useradd -M -r -g users jetty
 RUN chown -R jetty:users .
 USER jetty
+
+# Copy default skin (beta, many things don't work well yet)
+COPY plantuml.skin /home/jetty/
 
 # Run
 EXPOSE 8080
