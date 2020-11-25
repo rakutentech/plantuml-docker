@@ -1,9 +1,26 @@
-' Enable skins
-skinparam useBetaStyle true
+' Enable skins (doesn't really work yet it seems)
+'skinparam useBetaStyle true
 
-' The default skin already sets this, but it doesn't work (the beta has a few bugs still)
-skinparam titleFontName "Rakuten Sans"
-skinparam BackgroundColor transparent
-
-' Define a handy macro for adding icons
+!define CrimsonRed #bf0000
 !define FA(x) <font:Font Awesome 5 Free><U+x></font>
+
+hide footbox
+skinparam ArrowColor Black
+skinparam BackgroundColor transparent
+skinparam NoteBackgroundColor #e8e8e8
+skinparam NoteBorderColor #cccccc
+skinparam NoteBorderThickness 0.5
+skinparam padding 2
+skinparam ParticipantBackgroundColor transparent
+skinparam ParticipantBorderColor CrimsonRed
+skinparam SequenceDividerBackgroundColor CrimsonRed
+skinparam SequenceDividerFontColor White
+skinparam SequenceGroupBackgroundColor transparent
+skinparam SequenceGroupBodyBackgroundColor transparent
+skinparam SequenceLifeLineBorderColor CrimsonRed
+skinparam SequenceReferenceBackgroundColor CrimsonRed
+skinparam SequenceReferenceFontColor White
+skinparam SequenceReferenceHeaderBackgroundColor transparent
+skinparam Shadowing false
+skinparam TitleFontColor CrimsonRed
+skinparam TitleFontName "Rakuten Sans Medium"

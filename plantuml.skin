@@ -22,7 +22,7 @@ stereotype {
 }
 
 title {
-  FontName "Rakuten Sans"
+  FontName "Rakuten Sans Medium"
   HorizontalAlignment center
   FontSize 14
   Padding 5
