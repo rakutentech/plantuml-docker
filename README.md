@@ -2,6 +2,22 @@
 
 Docker image for running a PlantUML server.
 
+## Usage
+
+### Without cloning the repo
+
+```sh
+cat "read-packages personal access token.txt" | docker login ghcr.io -u "your-github-username" --password-stdin
+docker pull ghcr.io/rakutentech/plantuml:main
+docker run --init --rm -p 8080:8080 ghcr.io/rakutentech/plantuml:main
+```
+
+### Using a working copy of the repo
+
+```sh
+docker-compose up --build
+```
+
 ## Differences with the official image
 
 The differences with [plantuml/plantuml-server](https://hub.docker.com/r/plantuml/plantuml-server) are:
@@ -15,7 +31,7 @@ The differences with [plantuml/plantuml-server](https://hub.docker.com/r/plantum
   - **[Fira Code](https://fonts.google.com/specimen/Fira+Code)**, set as the default `monospace` font.
   - **[Font Awesome 5 Free](https://fontawesome.com/)**.
 
-## Usage
+## Example
 
 ```plantuml
 @startuml
