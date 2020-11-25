@@ -37,7 +37,7 @@ The differences with [plantuml/plantuml-server](https://hub.docker.com/r/plantum
 ```plantuml
 @startuml
 ' Load default includes
-!include https://gitcdn.xyz/repo/rakutentech/plantuml-docker/main/lib.pu
+!include https://raw.githubusercontent.com/rakutentech/plantuml-docker/main/lib.pu
 
 title Rakuten PlantUML Image
 
