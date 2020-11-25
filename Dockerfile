@@ -66,7 +66,7 @@ RUN  curl -fsSLo noto-sans.zip "https://fonts.google.com/download?family=Noto%20
 # See https://fonts.google.com/specimen/Noto+Sans+JP
 WORKDIR /usr/share/fonts/noto-sans-jp
 RUN  curl -fsSLo noto-sans-jp.zip "https://fonts.google.com/download?family=Noto%20Sans%20JP" \
-  && unzip -j noto-sans-jp.zip '*.ttf' \
+  && unzip -j noto-sans-jp.zip '*.otf' \
   && rm -f noto-sans-jp.zip
 
 # Install FontAwesome

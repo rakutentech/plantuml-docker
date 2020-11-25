@@ -1,5 +1,5 @@
 root {
-  FontName "Noto Sans"
+  FontName "Noto Sans JP"
   HyperLinkColor #BF0000
   FontColor black
   FontSize 12

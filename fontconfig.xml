@@ -6,7 +6,7 @@
     	<string>sans-serif</string>
 		</test>
 		<edit name="family" mode="prepend" binding="strong">
-			<string>Noto Sans</string>
+			<string>Noto Sans JP</string>
 		</edit>
 	</match>
 
