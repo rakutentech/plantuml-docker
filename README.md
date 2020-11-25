@@ -13,11 +13,14 @@ The differences with [plantuml/plantuml-server](https://hub.docker.com/r/plantum
   - **[Mulish](https://fonts.google.com/specimen/Mulish)** is installed and poses as the **Rakuten Sans** font, which it is visually similar to (and a decent fallback for when generating PNG diagrams).
   - **[Noto Sans](https://fonts.google.com/specimen/Noto+Sans)** and [Noto Sans JP](https://fonts.google.com/specimen/Noto+Sans+JP), recommended by the [ReX typography guidelines](http://rex.public.rakuten-it.com/design/the-basics/typography/). **Noto Sans** is set as the default `sans-serif` font.
   - **[Fira Code](https://fonts.google.com/specimen/Fira+Code)**, set as the default `monospace` font.
+  - **[Font Awesome 5 Free](https://fontawesome.com/)**.
 
 ## Usage
 
 ```plantuml
 @startuml
+!define FA(x) <font:Font Awesome 5 Free><U+x></font>
+
 skinparam defaultFontName "Noto Sans"
 skinparam titleFontName "Rakuten Sans"
 
@@ -26,8 +29,8 @@ title Rakuten PlantUML Image
 participant Browser
 participant "PlantUML Server" as PlantUML
 
-Browser -> PlantUML: Send diagram source
-Browser <<-- PlantUML: Get SVG
+Browser -> PlantUML: FA(f542) Send diagram source
+Browser <<-- PlantUML: Get SVG FA(f03e)
 @enduml
 ```
 

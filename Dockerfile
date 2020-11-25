@@ -70,8 +70,8 @@ RUN  curl -fsSLo noto-sans-jp.zip "https://fonts.google.com/download?family=Noto
 
 # Install FontAwesome
 WORKDIR /usr/share/fonts/font-awesome
-RUN  curl -fsSLo font-awesome.zip "https://use.fontawesome.com/releases/v5.15.1/fontawesome-free-5.15.1-desktop.zip" \
-  && unzip -j font-awesome.zip 'otfs/*.otf' \
+RUN  curl -fsSLo font-awesome.zip "https://use.fontawesome.com/releases/v5.15.1/fontawesome-free-5.15.1-web.zip" \
+  && unzip -j font-awesome.zip '*/webfonts/*.ttf' \
   && rm -f font-awesome.zip
 
 # Configure fonts
