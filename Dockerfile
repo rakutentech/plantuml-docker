@@ -89,8 +89,9 @@ RUN ln -s /etc/fonts/conf.avail/99-local.conf /etc/fonts/conf.d/ && fc-cache -rv
 
 # Configure home and user
 WORKDIR /home/jetty
-RUN useradd -M -r -g users jetty
-RUN chown -R jetty:users .
+RUN  groupadd -r -g 20001 jetty \
+  && useradd -M --no-log-init -r -u 20001 -g jetty jetty \
+  && chown -R jetty:jetty .
 USER jetty
 
 # Copy default skin (beta, many things don't work well yet)
