@@ -97,6 +97,9 @@ USER jetty
 # Copy default skin (beta, many things don't work well yet)
 COPY plantuml.skin /home/jetty/
 
+# Copy the library so it can be included as a file rather than a URL
+COPY rakuten.pu /home/jetty/
+
 # Run
 EXPOSE 8080
 CMD [ "java", "-jar", "/home/jetty/start.jar" ]

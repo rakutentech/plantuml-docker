@@ -7,7 +7,7 @@
 hide footbox
 skinparam ArrowColor Black
 skinparam BackgroundColor transparent
-skinparam DefaultFontName "Noto Sans JP"
+skinparam DefaultFontName "Noto Sans"
 skinparam NoteBackgroundColor #e8e8e8
 skinparam NoteBorderColor #cccccc
 skinparam NoteBorderThickness 0.5
@@ -24,4 +24,4 @@ skinparam SequenceReferenceFontColor White
 skinparam SequenceReferenceHeaderBackgroundColor transparent
 skinparam Shadowing false
 skinparam TitleFontColor CrimsonRed
-skinparam TitleFontName "Rakuten Sans Medium"
+skinparam TitleFontName "Rakuten Sans"
