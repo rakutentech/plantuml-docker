@@ -31,7 +31,7 @@ The differences with [plantuml/plantuml-server](https://hub.docker.com/r/plantum
 - Installs a [`plantuml.skin`](./plantuml.skin) with a few overrides. _(in beta, doesn't work well)_
 - Installs a [`rakuten.pu`](./rakuten.pu) library with a few definitions to get you started. Just include it with `!include rakuten.pu` at the start of your diagram.
 - Comes with a few fonts:
-  - **[Mulish](https://fonts.google.com/specimen/Mulish)** is installed and poses as the **Rakuten Sans** font, which it is visually similar to (and a decent fallback for when generating PNG diagrams).
+  - **[Mulish](https://fonts.google.com/specimen/Mulish)** is installed and poses as the **Rakuten Sans** font, which it is visually similar to (and a decent fallback for when generating PNG diagrams). Generated SVG images correctly inject the `font-family: 'Rakuten Sans'` style, too.
   - **[Noto Sans](https://fonts.google.com/specimen/Noto+Sans)** and [Noto Sans JP](https://fonts.google.com/specimen/Noto+Sans+JP), recommended by the [ReX typography guidelines](http://rex.public.rakuten-it.com/design/the-basics/typography/). **Noto Sans** is set as the default `sans-serif` font.
   - **[Fira Code](https://fonts.google.com/specimen/Fira+Code)**, set as the default `monospace` font.
   - **[Font Awesome 5 Free](https://fontawesome.com/)**.
