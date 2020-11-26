@@ -45,6 +45,6 @@ jobs:
           cache-to: type=local,dest=/tmp/.buildx-cache,mode=max
           tags: |
             ghcr.io/rakutentech/plantuml:${{ env.GITHUB_REF_SLUG }}
-            ghcr.io/rakutentech/plantuml:${{ github.sha }}
+            ghcr.io/rakutentech/plantuml:${{ env.GITHUB_SHA_SHORT }}
           secrets: |
             GIT_AUTH_TOKEN=${{ github.token }}
