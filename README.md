@@ -1,5 +1,8 @@
 # plantuml-docker
 
+[![Docker image](https://github.com/rakutentech/plantuml-docker/workflows/Publish%20Docker%20image/badge.svg)](https://github.com/orgs/rakutentech/packages/container/package/plantuml)
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](./CODE_OF_CONDUCT.md)
+
 Docker image for running a PlantUML server.
 
 ## Usage
