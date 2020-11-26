@@ -4,6 +4,7 @@ ARG JETTY_VERSION=9.4.35.v20201120
 ARG PLANTUML_VERSION=1.2020.20
 
 ENV ALLOW_PLANTUML_INCLUDE=true
+ENV FONTCONFIG_PATH=/etc/fonts/
 ENV JAVA_HOME=/usr/lib/jvm/zulu13-ca
 ENV JETTY_BASE=/home/jetty
 ENV JETTY_HOME=/home/jetty
@@ -16,6 +17,7 @@ ENV PATH="${JAVA_HOME}:$PATH"
 RUN apk --no-cache add \
   curl \
   fontconfig \
+  fontconfig-dev \
   freetype \
   gd \
   ghostscript-fonts \
@@ -76,8 +78,14 @@ RUN  curl -fsSLo font-awesome.zip "https://use.fontawesome.com/releases/v5.15.1/
   && rm -f font-awesome.zip
 
 # Configure fonts
-COPY fontconfig.xml /etc/fonts/conf.avail/95-rakuten.conf
-RUN ln -s /etc/fonts/conf.avail/95-rakuten.conf /etc/fonts/conf.d/ && fc-cache -fv
+COPY fontconfig.xml /etc/fonts/conf.avail/99-local.conf
+RUN ln -s /etc/fonts/conf.avail/99-local.conf /etc/fonts/conf.d/ && fc-cache -rv
+
+# For debugging
+# RUN echo "*** sans-serif:" && fc-match -s 'sans-serif'
+# RUN echo "*** monospace:" && fc-match -s 'monospace'
+# RUN echo "*** Noto Sans:" && fc-match -s 'Noto Sans'
+# RUN echo "*** Rakuten Sans:" && fc-match -s 'Rakuten Sans'
 
 # Configure home and user
 WORKDIR /home/jetty
