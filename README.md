@@ -10,8 +10,6 @@ Docker image for running a PlantUML server.
 ### Without cloning the repo
 
 ```sh
-cat "read-packages personal access token.txt" | docker login ghcr.io -u "your-github-username" --password-stdin
-docker pull ghcr.io/rakutentech/plantuml:main
 docker run --init --rm -p 8080:8080 ghcr.io/rakutentech/plantuml:main
 ```
 
