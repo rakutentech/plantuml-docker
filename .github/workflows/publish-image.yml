@@ -11,40 +11,35 @@ jobs:
   push_to_registry:
     name: Push Docker image to GitHub Packages
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
     steps:
 
-      - uses: rlespinasse/github-slug-action@v3.x
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - uses: rlespinasse/github-slug-action@v5
 
       - name: Setup Buildx
-        uses: docker/setup-buildx-action@v1
-        with:
-          install: true
-
-      - name: Cache Docker layers
-        uses: actions/cache@v2
-        with:
-          path: /tmp/.buildx-cache
-          key: ${{ runner.os }}-buildx-${{ github.sha }}
-          restore-keys: |
-            ${{ runner.os }}-buildx-
+        uses: docker/setup-buildx-action@v4
 
       - name: Login
         if: github.event_name != 'pull_request'
-        uses: docker/login-action@v1
+        uses: docker/login-action@v4
         with:
           registry: ghcr.io
-          username: ${{ github.repository_owner }}
-          password: ${{ secrets.CR_PAT }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Publish
-        uses: docker/build-push-action@v2
+        uses: docker/build-push-action@v7
         with:
+          context: .
           push: ${{ github.event_name != 'pull_request' }}
           platforms: linux/amd64
-          cache-from: type=local,src=/tmp/.buildx-cache
-          cache-to: type=local,dest=/tmp/.buildx-cache,mode=max
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
           tags: |
             ghcr.io/rakutentech/plantuml:${{ env.GITHUB_REF_SLUG }}
             ghcr.io/rakutentech/plantuml:${{ env.GITHUB_SHA_SHORT }}
-          secrets: |
-            GIT_AUTH_TOKEN=${{ github.token }}
